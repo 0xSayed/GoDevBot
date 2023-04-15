@@ -3,9 +3,9 @@ const { BotCommand, BotCommandDeployment } = require("@disqada/halfbot");
 /** @type { import("@disqada/halfbot").BotCommandData } */
 const data = {
 	name: "commands",
-	description: `List all bot commands`,
+	description: "قائمة أوامر البوت",
 	deployment: BotCommandDeployment.Global,
-	category: "information",
+	category: "معلومات",
 	types: { chatInput: true }
 };
 
@@ -47,7 +47,7 @@ async function execute(interaction) {
 	console.log("embeds: ", embeds);
 
 	if (embeds.length === 0) {
-		return "No commands available";
+		return "لا توجد أية أوامر";
 	}
 
 	return { embeds: embeds };

@@ -19,12 +19,17 @@ async function execute(bot, member) {
 	/** @type { import("discord.js").TextChannel } */
 	const channel = member.guild.channels.cache.get(channelId);
 	if (!channel) {
-		throw new Error("Couldn't find welcoming channel");
+		const channel = member.guild.channels.fetch(channelId);
+		if (!channel) {
+			throw new Error("Couldn't find welcoming channel");
+		}
 	}
 
 	/** @type { import("discord.js").APIEmbed } */
 	let embed = {
-		title: "أهلا وسهلاً"
+		title: "مرحباً :hugging:",
+		description:
+			"الرجاء قراءة القوانين في <#971737134010601502> والإلتزام بها\nلقد أصبحت جزءا من مجتمع محرك جودوت العربي"
 	};
 
 	if (bot.style) {

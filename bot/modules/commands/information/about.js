@@ -3,9 +3,9 @@ const { BotCommand, BotCommandDeployment } = require("@disqada/halfbot");
 /** @type { import("@disqada/halfbot").BotCommandData } */
 const data = {
 	name: "about",
-	description: "General information about the bot",
+	description: "معلومات عامة عن البوت",
 	deployment: BotCommandDeployment.Global,
-	category: "information",
+	category: "معلومات",
 	types: {
 		chatInput: true
 	}
@@ -20,27 +20,23 @@ async function execute(interaction) {
 
 	/** @type { import("discord.js").APIEmbed } */
 	const embed = {
-		description: "The testing bot for 'halfbot-example' code",
+		description: "بوت مجتمع محرك جودوت العربي الرسمي",
 		thumbnail: { url: interaction.client.user.displayAvatarURL() },
 		fields: [
 			{
-				name: "Developer",
-				value: "The Alpha"
+				name: "المطورين",
+				value: "The Alpha - Risker"
 			},
 			{
-				name: "Programming Language",
+				name: "لغة البرمجة",
 				value: "JavaScript / TypeScript"
 			},
 			{
-				name: "All commands",
-				value: "Run the command '/commands'"
+				name: "جميع الأوامر",
+				value: "قم بتشغيل الأمر '/commands'"
 			},
 			{
-				name: "Servers",
-				value: `Currently in ${client.guilds.cache.size} servers`
-			},
-			{
-				name: "Ping",
+				name: "السرعة",
 				value: `${client.ws.ping}ms`
 			}
 		]

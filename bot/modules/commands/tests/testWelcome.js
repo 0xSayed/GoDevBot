@@ -10,11 +10,11 @@ const targetCode = "target";
 /** @type { import("@disqada/halfbot").BotCommandData } */
 const data = {
 	name: "test-welcome",
-	description: "Tests the welcome event on a member",
+	description: "إختبر الترحيب على عضو",
 	dmPermission: false,
 	defaultMemberPermissions: ["Administrator"],
 	deployment: BotCommandDeployment.DevGuild,
-	category: "tests",
+	category: "إختبارات",
 	types: {
 		chatInput: true,
 		contextMenu: BotCommandContextMenuType.User
@@ -22,7 +22,7 @@ const data = {
 	options: [
 		{
 			name: targetCode,
-			description: "The member to welcome",
+			description: "العضو المرحب به",
 			type: ApplicationCommandOptionType.User,
 			required: false
 		}
@@ -41,7 +41,7 @@ async function execute(interaction) {
 	}
 
 	if (!target) {
-		throw new Error("No member was provided for testing");
+		throw new Error("لم يتم تحديد عضو");
 	}
 
 	const { getFilePath } = require("paths-manager");
@@ -54,7 +54,7 @@ async function execute(interaction) {
 
 	/** @type { import("discord.js").InteractionReplyOptions } */
 	const replyOptions = {
-		content: `Welcomed ${target.user.username}`,
+		content: `تم الترحيب ب' ${target.user.username}'`,
 		ephemeral: true
 	};
 
