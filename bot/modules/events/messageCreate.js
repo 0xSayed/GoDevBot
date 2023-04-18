@@ -3,7 +3,7 @@ const { BotEvent } = require("@disqada/halfbot");
 
 /** @type { import("@disqada/halfbot").BotEventData } */
 const data = {
-	name: Events.MessageCreate
+    name: Events.MessageCreate
 };
 
 /**
@@ -11,12 +11,12 @@ const data = {
  * @param { import("discord.js").Message } message
  */
 async function execute(bot, message) {
-	if (
-		message.channel.type === ChannelType.GuildAnnouncement &&
-		message.crosspostable
-	) {
-		await message.crosspost();
-	}
+    if (
+        message.channel.type === ChannelType.GuildAnnouncement &&
+        message.crosspostable
+    ) {
+        await message.crosspost();
+    }
 }
 
 module.exports = new BotEvent(data, execute);
