@@ -1,27 +1,27 @@
 {
-    "name": "godevbot",
-    "version": "0.0.0",
-    "description": "بوت مجتمع محرك جودوت العربي الرسمي",
-    "main": "bot/launch.js",
-    "type": "commonjs",
-    "scripts": {
-        "setup": "npm i",
-        "start": "node .",
-        "watch": "nodemon ."
-    },
-    "author": {
-        "name": "The Alpha",
-        "email": "contact@nabilalsaiad.com",
-        "url": "https://links.nabilalsaiad.com"
-    },
-    "contributors": [],
-    "license": "MIT",
-    "dependencies": {
-        "@disqada/halfbot": "^0.2.1"
-    },
-    "devDependencies": {
-        "eslint": "^8.35.0",
-        "nodemon": "^2.0.20",
-        "prettier": "^2.8.7"
-    }
+  "name": "godevbot",
+  "version": "0.0.0",
+  "description": "بوت مجتمع محرك جودوت العربي الرسمي",
+  "main": "bot/launch.js",
+  "type": "commonjs",
+  "scripts": {
+    "setup": "npm i",
+    "start": "node .",
+    "watch": "nodemon ."
+  },
+  "author": {
+    "name": "The Alpha",
+    "email": "contact@nabilalsaiad.com",
+    "url": "https://links.nabilalsaiad.com"
+  },
+  "contributors": [],
+  "license": "MIT",
+  "dependencies": {
+    "@disqada/halfbot": "^1.1.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.40.0",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8"
+  }
 }

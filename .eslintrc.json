@@ -1,29 +1,18 @@
 {
     "env": {
-        "node": true,
-        "commonjs": true
+        "commonjs": true,
+        "es2021": true,
+        "node": true
     },
-    "extends": ["eslint:recommended"],
+    "extends": "eslint:recommended",
     "parserOptions": {
         "ecmaVersion": "latest"
     },
     "ignorePatterns": ["**/*.md"],
     "rules": {
-        "array-callback-return": ["error", { "checkForEach": true }],
-        "indent": ["error", 4, { "SwitchCase": 1 }],
-        "linebreak-style": ["error", "unix"],
-        "quotes": ["error", "double"],
-        "semi": ["error", "always"],
-        "prefer-const": ["error"],
-        "consistent-this": ["error"],
-        "comma-dangle": ["error"],
-        "comma-spacing": ["error"],
-        "comma-style": ["error"],
-        "no-duplicate-case": ["error"],
-        "no-trailing-spaces": ["error"],
-        "default-case": ["warn"],
-        "no-unused-vars": ["warn"],
-        "no-unused-labels": ["warn"],
-        "no-unused-expressions": ["warn"]
+        "no-unused-vars": [
+            "error",
+            { "vars": "local", "args": "none", "ignoreRestSiblings": false }
+        ]
     }
 }

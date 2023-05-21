@@ -5,19 +5,15 @@
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
 
-    "files.eol": "\n",
-    "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        "**/Thumbs.db": true,
-        "node_modules": true,
-        ".gitignore": true,
-        "package-lock.json": true,
-        "LICENSE": true
-    },
+    "files.insertFinalNewline": true,
+    "files.eol": "auto",
 
-    "cSpell.words": ["crosspost", "crosspostable", "disqada", "halfbot", "vars"]
+    "cSpell.words": [
+        "azkar",
+        "crosspost",
+        "crosspostable",
+        "disqada",
+        "halfbot",
+        "vars"
+    ]
 }

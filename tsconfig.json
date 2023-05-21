@@ -1,0 +1,9 @@
+{
+    "include": ["bot", ".env.d.ts"],
+    "compilerOptions": {
+        "allowJs": true,
+        "checkJs": true,
+        "resolveJsonModule": true,
+        "noEmit": true
+    }
+}
