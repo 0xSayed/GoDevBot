@@ -17,7 +17,7 @@ async function execute(bot) {
     /** @type { import("discord.js").Guild } */
     let guild = bot.client.guilds.cache.get(guildId);
     if (!guild) {
-        guild = bot.client.guilds.fetch(guildId);
+        guild = await bot.client.guilds.fetch(guildId);
         if (!guild) {
             throw new Error("Couldn't find support guild");
         }
@@ -31,9 +31,9 @@ async function execute(bot) {
     /** @type { import("discord.js").TextChannel } */
     let channel = guild.channels.cache.get(channelId);
     if (!channel) {
-        channel = guild.channels.fetch(channelId);
+        channel = await guild.channels.fetch(channelId);
         if (!channel) {
-            throw new Error("Couldn't find chat channel");
+            throw new Error("Couldn't find welcoming channel");
         }
     }
 

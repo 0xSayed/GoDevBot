@@ -16,7 +16,7 @@ async function execute(bot, member) {
     /** @type { import("discord.js").TextChannel } */
     let channel = member.guild.channels.cache.get(channelId);
     if (!channel) {
-        channel = member.guild.channels.fetch(channelId);
+        channel = await member.guild.channels.fetch(channelId);
         if (!channel) {
             throw new Error("Couldn't find welcoming channel");
         }
