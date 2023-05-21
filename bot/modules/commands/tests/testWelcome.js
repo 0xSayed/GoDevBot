@@ -31,9 +31,8 @@ const data = {
 
 /** @param { import("@disqada/halfbot").BotCommandInteraction } interaction */
 async function execute(interaction) {
-    /** @type { import("discord.js").GuildMember } */
     let target;
-    if (interaction.targetMember) {
+    if ("targetMember" in interaction) {
         target = interaction.targetMember;
     } else {
         target =
@@ -44,8 +43,9 @@ async function execute(interaction) {
         throw new Error("لم يتم تحديد عضو");
     }
 
-    const { getFilePath } = require("paths-manager");
-    const welcomeEventFilePath = getFilePath("guildMemberAdd.js");
+    const { aFilePath } = require("@disqada/pathfinder");
+    // @ts-expect-error
+    const welcomeEventFilePath = aFilePath("guildMemberAdd").fullPath;
 
     /** @type { import("@disqada/halfbot").BotEvent } */
     const welcomeEvent = require(welcomeEventFilePath);
@@ -54,7 +54,8 @@ async function execute(interaction) {
 
     /** @type { import("discord.js").InteractionReplyOptions } */
     const replyOptions = {
-        content: `تم الترحيب ب' ${target.user.username}'`,
+        // @ts-expect-error
+        content: `تم الترحيب ب' ${target.user.tag}'`,
         ephemeral: true
     };
 
