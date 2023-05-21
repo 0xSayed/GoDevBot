@@ -1,15 +1,12 @@
 const { Events, ChannelType } = require("discord.js");
 const { BotEvent } = require("@disqada/halfbot");
 
-/** @type { import("@disqada/halfbot").BotEventData } */
+/** @type { import("@disqada/halfbot").BotEventData<"messageCreate"> } */
 const data = {
     name: Events.MessageCreate
 };
 
-/**
- * @param { import("@disqada/halfbot").DiscordBot } bot
- * @param { import("discord.js").Message } message
- */
+/** @type { import("@disqada/halfbot").BotEventFunction<"messageCreate"> } */
 async function execute(bot, message) {
     if (
         message.channel.type === ChannelType.GuildAnnouncement &&

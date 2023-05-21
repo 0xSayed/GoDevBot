@@ -1,15 +1,12 @@
 const { Events } = require("discord.js");
 const { BotEvent } = require("@disqada/halfbot");
 
-/** @type { import("@disqada/halfbot").BotEventData } */
+/** @type { import("@disqada/halfbot").BotEventData<"guildMemberAdd"> } */
 const data = {
     name: Events.GuildMemberAdd
 };
 
-/**
- * @param { import("@disqada/halfbot").DiscordBot } bot
- * @param { import("discord.js").GuildMember } member
- */
+/** @type { import("@disqada/halfbot").BotEventFunction<"guildMemberAdd"> } */
 async function execute(bot, member) {
     const channelId = bot?.vars?.welcomeChannelId;
     if (!channelId) {

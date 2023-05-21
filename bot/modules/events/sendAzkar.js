@@ -2,14 +2,12 @@ const { Events } = require("discord.js");
 const { BotEvent } = require("@disqada/halfbot");
 const { setTimeout } = require("timers/promises");
 
-/** @type { import("@disqada/halfbot").BotEventData } */
+/** @type { import("@disqada/halfbot").BotEventData<"ready"> } */
 const data = {
     name: Events.ClientReady
 };
 
-/**
- * @param { import("@disqada/halfbot").DiscordBot } bot
- */
+/** @type { import("@disqada/halfbot").BotEventFunction<"ready"> } */
 async function execute(bot) {
     const guildId = bot?.info?.supportGuildId;
     if (!guildId) {
