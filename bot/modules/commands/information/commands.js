@@ -16,8 +16,8 @@ const data = {
 async function execute(interaction) {
     const categories = {};
 
-    for (const command of interaction.bot.commands) {
-        const { data } = command[1];
+    for (let i = 0; i < interaction.bot.commands.size; i++) {
+        const { data } = interaction.bot.commands.at(i);
 
         if (!categories[data.category]) {
             categories[data.category] = [];
