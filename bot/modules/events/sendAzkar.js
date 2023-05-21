@@ -23,21 +23,23 @@ async function execute(bot) {
         }
     }
 
+    // @ts-expect-error
     const channelId = bot?.vars?.chatChannelId;
     if (!channelId) {
         throw new Error("Chat channel id was not provided");
     }
 
-    /** @type { import("discord.js").TextChannel } */
     let channel = guild.channels.cache.get(channelId);
-    if (!channel) {
+    if (!channel || !("send" in channel)) {
         channel = await guild.channels.fetch(channelId);
-        if (!channel) {
+        if (!channel || !("send" in channel)) {
             throw new Error("Couldn't find welcoming channel");
         }
     }
 
+    // @ts-expect-error
     const delay = bot?.vars?.azkarDelay * 1000;
+    // @ts-expect-error
     const max = bot?.vars?.azkar.length;
 
     // eslint-disable-next-line no-constant-condition
@@ -47,6 +49,7 @@ async function execute(bot) {
         const rand = Math.floor(Math.random() * max);
         /** @type { import("discord.js").APIEmbed } */
         let embed = {
+            // @ts-expect-error
             description: bot?.vars?.azkar[rand]
         };
 
